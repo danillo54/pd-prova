@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- tag para dar zoom em dispositivos moveis-->
+    <title ng-bind="vm.title"></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="node_modules/angular-loading-bar/build/loading-bar.css">
+    <!-- fim css -->
+
+    <!-- inicio js-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="node_modules/angular-local-storage/src/angular-local-storage.js"></script>
+    <script src="node_modules/angular-loading-bar/build/loading-bar.js"></script>
+
+    <script src="app/config/pd-usuario.js"></script>
+    <script src="app/config/pd-rotas-config.js"></script>
+    <script src="app/controller/IndexRouterController.js"></script>
+    <script src="app/views/usuarios/pesquisa-usuario.controller.js"></script>
+    <script src="app/views/usuarios/pesquisa-usuario.service.js"></script>
+    <script src="arquitetura/services/pd-service.js"></script>
+    <script src="arquitetura/services/alert.service.js"></script>
+    <script src="arquitetura/directivas/pd-panel/pd-panel.directive.js"></script>
+    <script src="arquitetura/directivas/pd-grid/pd-grid.directive.js"></script>
+    <script src="app/views/usuarios/cadastro-usuario.controller.js"></script>
+    <script src="app/views/usuarios/cadastro-usuario.service.js"></script>
+    <script src="arquitetura/directivas/pd-crud/pd-crud.directive.js"></script>
+    <script src="arquitetura/directivas/pd-input-text/pd-input-text.directive.js"></script>
+    <script src="arquitetura/directivas/pd-select/pd-select.directive.js"></script>
+
+
+    <!-- fim js -->
+
+</head>
+<body ng-app="pdUsuario" class="container"
+      ng-controller="IndexRouterController as vm">
+
+<div class="row">
+    <!--<div class="col-md-12">-->
+        <!--<md-nav-bar>-->
+            <!--<md-nav-item md-nav-click="vm.abrirPagina('pesquisaUsuario')">-->
+                <!--Pesquisa de usuario-->
+            <!--</md-nav-item>-->
+
+        <!--</md-nav-bar>-->
+    <!--</div>-->
+</div>
+<div>
+    <a ui-sref="pesquisaUsuario">Pesquisa de usuários</a>
+    <a ui-sref="cadastroUsuario">Cadastro de usuários</a>
+</div>
+
+<div><!-- corpo-->
+    <ui-view></ui-view>
+</div>
+</body>
+</html>

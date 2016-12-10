@@ -1,0 +1,18 @@
+<div ng-controller="CadastroUsuarioController as vm">
+    <pd-crud titulo="Cadastro de Usuários"
+             salvar="vm.pdService.salvarStorage()"
+             excluir="vm.pdService.excluirStorage()"
+             limpar="vm.pdService.limpar()">
+
+        <pd-input-text label="Código"
+            ng-model="vm.pdService.entidade.codigo"></pd-input-text>
+        <pd-input-text label="Nome"
+            ng-model="vm.pdService.entidade.nome"></pd-input-text>
+        <pd-select label="Tipo de Usuário"
+                   model="vm.pdService.entidade.tipo"
+                   provider="vm.pdService.provaider
+
+        </pd-select>
+
+    </pd-crud>
+</div>
