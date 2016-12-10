@@ -8,6 +8,8 @@ angular.module("pdUsuario",  ['ngMessages',
     'ui.router',
     'oc.lazyLoad',
     'pdAppArquitetura',
+    'ngTouch',
+    'ui.bootstrap',
     'LocalStorageModule','angular-loading-bar']).config(config);
 
 config.$inject = ['cfpLoadingBarProvider'];

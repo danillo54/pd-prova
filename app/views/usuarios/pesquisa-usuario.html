@@ -4,8 +4,13 @@
             Pesquisa de usuários
         </pd-panel-header>
         <pd-panel-body>
+            <pd-grid service="vm.pdService">
 
-            <pd-grid default-grid-options="vm.pdService.defaultGridOptions"></pd-grid>
+            </pd-grid>
+
         </pd-panel-body>
+        <pd-panel-footer>
+            <button ng-click="vm.ler()" class="btn btn-primary">Buscar</button>
+        </pd-panel-footer>
     </pd-panel>
 </div>

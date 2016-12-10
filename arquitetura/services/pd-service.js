@@ -33,8 +33,10 @@
             self.onSalvarFault = onSalvarFault;
 
             self.metodoSalvar = 'salvar';
+            self.lerStorage = lerStorage;
 
             function salvar() {
+
                 var isSalvar = onAntesSalvar();
 
                 if(isSalvar === false){
@@ -43,8 +45,9 @@
 
                 var deffered = $q.defer();
 
-                $http.post('/rest/'+self.controller+'/'+self.metodoSalvar, self.entidade)
-                    .then(salvarResult, salvarFault);
+                // $http.post('/rest/'+self.controller+'/'+self.metodoSalvar, self.entidade)
+                //     .then(salvarResult, salvarFault);
+                salvarStorage();
 
                 return deffered.promise;
 
@@ -98,7 +101,10 @@
 
             function salvarStorage(){
                 if(verificarSuporteStorage()) {
+                    self.lista.push(self.entidade);
                     localStorageService.set(self.nome, self.lista);
+                    AlertService.success("Salvo com sucesso!");
+                    self.limpar();
                 }
             }
             
@@ -110,9 +116,10 @@
             
             function lerStorage() {
                 if(verificarSuporteStorage()) {
-                    return localStorageService.get(self.nome);
+                    return  localStorageService.get(self.nome);
+
                 }
-                return [];
+
             }
 
             function verificarSuporteStorage(){

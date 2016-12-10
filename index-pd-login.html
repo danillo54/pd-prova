@@ -55,25 +55,26 @@
 
 </head>
 <body ng-app="pdUsuario" class="container"
-      ng-controller="IndexRouterController as vm">
+      >
 
 <div class="row">
-    <div class="col-md-12">
-        <md-nav-bar>
-            <md-nav-item md-nav-click="vm.abrirPagina('pesquisaUsuario')">
-                Pesquisa de usuário
-            </md-nav-item>
-            <md-nav-item md-nav-click="vm.abrirPagina('cadastroUsuario')">
-                Cadastro de usuário
-            </md-nav-item>
-        </md-nav-bar>
-    </div>
+    <pd-panel>
+        <pd-panel-header>Login</pd-panel-header>
+        <pd-panel-body>
+
+            <pd-input-text label="Login"
+                          </pd-input-text>
+
+
+
+
+            <pd-input-password label="Senha"
+                              </pd-input-password>
+
+
+        </pd-panel-body>
+    </pd-panel>
 </div>
 
-<div><!-- corpo-->
-    <ui-view></ui-view>
-
-
-</div>
 </body>
 </html>

@@ -12,23 +12,25 @@
         var vm = this;
         vm.getPdService = getPdService;
 
-
         function getPdService() {
             var cs = new PdService();
 
-            cs.lista = [];
 
-            cs.defaultGridOptions = {
+            cs.nome = "listaUsuario";
+
+            cs.gridOptions = {
                 columnDefs: [
                     {name: 'Código', field: 'codigo', minWidth: 230},
                     {name: 'Nome', field: 'nome'},
-                    {name: 'Login', field: 'login'},
+                    {name: 'Login',field: 'login'},
                     {name: 'Email', field: 'email'}
-
                 ],
-                data: 'cs.lista',
-                enableColumnMenus: true
+                data: 'lista',
+                enableColumnMenus: false
+
             };
+
+
 
             return cs;
         }
